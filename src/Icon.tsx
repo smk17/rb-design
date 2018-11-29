@@ -1,6 +1,5 @@
 import * as React from "react";
 import classNames from "classnames";
-import "antd/lib/icon/style";
 
 export interface IDYIconPropTypes {
   type?: string;

@@ -1,0 +1,9 @@
+.rb-image-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.rb-image-container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
