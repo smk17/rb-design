@@ -31,13 +31,18 @@ var RbImage = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     RbImage.prototype.renderImg = function () {
-        var _a = this.props, width = _a.width, height = _a.height, src = _a.src, background = _a.background, children = _a.children, style = _a.style, className = _a.className, onClick = _a.onClick, alt = _a.alt;
+        var _a = this.props, width = _a.width, height = _a.height, src = _a.src, background = _a.background, children = _a.children, style = _a.style, objectFit = _a.objectFit, className = _a.className, onClick = _a.onClick, alt = _a.alt;
         if (background) {
-            return (React.createElement("div", { className: classNames(["rb-image-container", className]), onClick: onClick, style: __assign({}, style, { width: width,
-                    height: height, backgroundImage: src ? "url(" + src + ")" : undefined }) }, children));
+            return (React.createElement("div", { className: classNames(["rb-image-container", className]), onClick: onClick, style: __assign({}, style, { height: height, backgroundImage: src ? "url(" + src + ")" : undefined }) }, children));
         }
         else {
-            return (React.createElement("img", { className: classNames(["rb-image-cover", className]), src: src, alt: alt, style: __assign({}, style, { width: width, height: height }), onClick: onClick }));
+            var classes = {
+                "rb-image-cover": objectFit === "cover",
+                "rb-image-contain": objectFit === "contain"
+            };
+            if (className)
+                classes[className] = true;
+            return (React.createElement("img", { className: classNames(classes), src: src, alt: alt, style: __assign({}, style, { width: width, height: height }), onClick: onClick }));
         }
     };
     RbImage.prototype.render = function () {
@@ -48,6 +53,10 @@ var RbImage = /** @class */ (function (_super) {
         else {
             return this.Icon;
         }
+    };
+    RbImage.defaultProps = {
+        src: "",
+        objectFit: "cover"
     };
     return RbImage;
 }(React.Component));

@@ -10,8 +10,10 @@ export interface ImagePropTypes {
     onClick?: () => void;
     name?: string;
     src: string;
+    objectFit: "contain" | "cover";
 }
 declare class RbImage extends React.Component<ImagePropTypes> {
+    static defaultProps: ImagePropTypes;
     private Icon;
     renderImg(): JSX.Element;
     render(): {} | null | undefined;

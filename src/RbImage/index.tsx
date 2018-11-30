@@ -12,9 +12,14 @@ export interface ImagePropTypes {
   onClick?: () => void;
   name?: string;
   src: string;
+  objectFit: "contain" | "cover";
 }
 
 class RbImage extends React.Component<ImagePropTypes> {
+  public static defaultProps: ImagePropTypes = {
+    src: "",
+    objectFit: "cover"
+  };
   private Icon: React.ReactNode;
   renderImg() {
     const {
@@ -24,6 +29,7 @@ class RbImage extends React.Component<ImagePropTypes> {
       background,
       children,
       style,
+      objectFit,
       className,
       onClick,
       alt
@@ -35,7 +41,6 @@ class RbImage extends React.Component<ImagePropTypes> {
           onClick={onClick}
           style={{
             ...style,
-            width,
             height,
             backgroundImage: src ? `url(${src})` : undefined
           }}
@@ -44,9 +49,14 @@ class RbImage extends React.Component<ImagePropTypes> {
         </div>
       );
     } else {
+      const classes: IDictionary<boolean> = {
+        "rb-image-cover": objectFit === "cover",
+        "rb-image-contain": objectFit === "contain"
+      };
+      if (className) classes[className] = true;
       return (
         <img
-          className={classNames(["rb-image-cover", className])}
+          className={classNames(classes)}
           src={src}
           alt={alt}
           style={{ ...style, width, height }}
