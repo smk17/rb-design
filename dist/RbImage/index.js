@@ -28,12 +28,19 @@ import "./index.css";
 var RbImage = /** @class */ (function (_super) {
     __extends(RbImage, _super);
     function RbImage() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.Icon = React.createElement(React.Fragment, null);
+        return _this;
     }
     RbImage.prototype.renderImg = function () {
-        var _a = this.props, width = _a.width, height = _a.height, src = _a.src, background = _a.background, children = _a.children, style = _a.style, objectFit = _a.objectFit, className = _a.className, onClick = _a.onClick, alt = _a.alt;
+        var _a = this.props, width = _a.width, height = _a.height, src = _a.src, background = _a.background, children = _a.children, objectFit = _a.objectFit, className = _a.className, onClick = _a.onClick, alt = _a.alt;
+        var style = __assign({}, this.props.style);
+        if (width)
+            style.width = width;
+        if (height)
+            style.width = height;
         if (background) {
-            return (React.createElement("div", { className: classNames(["rb-image-container", className]), onClick: onClick, style: __assign({}, style, { height: height, backgroundImage: src ? "url(" + src + ")" : undefined }) }, children));
+            return (React.createElement("div", { className: classNames(["rb-image-container", className]), onClick: onClick, style: __assign({}, style, { backgroundImage: src ? "url(" + src + ")" : undefined }) }, children));
         }
         else {
             var classes = {
@@ -42,7 +49,7 @@ var RbImage = /** @class */ (function (_super) {
             };
             if (className)
                 classes[className] = true;
-            return (React.createElement("img", { className: classNames(classes), src: src, alt: alt, style: __assign({}, style, { width: width, height: height }), onClick: onClick }));
+            return (React.createElement("img", { className: classNames(classes), src: src, alt: alt, style: style, onClick: onClick }));
         }
     };
     RbImage.prototype.render = function () {

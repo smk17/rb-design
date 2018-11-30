@@ -20,7 +20,7 @@ class RbImage extends React.Component<ImagePropTypes> {
     src: "",
     objectFit: "cover"
   };
-  private Icon: React.ReactNode;
+  private Icon: React.ReactNode = <React.Fragment />;
   renderImg() {
     const {
       width,
@@ -28,12 +28,14 @@ class RbImage extends React.Component<ImagePropTypes> {
       src,
       background,
       children,
-      style,
       objectFit,
       className,
       onClick,
       alt
     } = this.props;
+    const style: React.CSSProperties = { ...this.props.style };
+    if (width) style.width = width;
+    if (height) style.width = height;
     if (background) {
       return (
         <div
@@ -41,7 +43,6 @@ class RbImage extends React.Component<ImagePropTypes> {
           onClick={onClick}
           style={{
             ...style,
-            height,
             backgroundImage: src ? `url(${src})` : undefined
           }}
         >
@@ -59,7 +60,7 @@ class RbImage extends React.Component<ImagePropTypes> {
           className={classNames(classes)}
           src={src}
           alt={alt}
-          style={{ ...style, width, height }}
+          style={style}
           onClick={onClick}
         />
       );
