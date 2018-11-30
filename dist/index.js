@@ -1,4 +1,2 @@
-export { default as createFromIconfontCN } from "./Icon";
-export { default as RbImage } from "./RbImage";
-
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),Object.defineProperty(exports,"createFromIconfontCN",{enumerable:!0,get:function(){return _Icon.default}}),Object.defineProperty(exports,"RbImage",{enumerable:!0,get:function(){return _RbImage.default}});var _Icon=_interopRequireDefault(require("./Icon")),_RbImage=_interopRequireDefault(require("./RbImage"));function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}
 //# sourceMappingURL=index.js.map

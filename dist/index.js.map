@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,IAAI,oBAAoB,EAAE,MAAM,QAAQ,CAAC;AACzD,OAAO,EAAE,OAAO,IAAI,OAAO,EAAE,MAAM,WAAW,CAAC","file":"index.js","sourceRoot":"./"}
+{"version":3,"sources":["index.js"],"names":["_Icon","_interopRequireDefault","require","_RbImage"],"mappings":"gRAAA,IAAAA,MAAAC,uBAAAC,QAAA,WACAC,SAAAF,uBAAAC,QAAA","file":"index.js","sourcesContent":["export { default as createFromIconfontCN } from \"./Icon\";\nexport { default as RbImage } from \"./RbImage\";\n"]}

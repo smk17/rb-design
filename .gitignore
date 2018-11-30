@@ -8,6 +8,7 @@ npm-debug.log*
 # Build
 build/*
 backup/*
+release/*
 
 # Cache
 .cache-loader
