@@ -1,6 +1,6 @@
 {
   "name": "rb-design",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "description": "软邦开发团队UI组件集",
   "main": "dist/index.js",
   "scripts": {

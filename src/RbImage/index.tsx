@@ -35,7 +35,7 @@ class RbImage extends React.Component<ImagePropTypes> {
     } = this.props;
     const style: React.CSSProperties = { ...this.props.style };
     if (width) style.width = width;
-    if (height) style.width = height;
+    if (height) style.height = height;
     if (background) {
       return (
         <div
