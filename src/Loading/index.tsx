@@ -52,7 +52,7 @@ class Loading extends React.Component<ILoadingProps, ILoadingStates> {
       const { width, height } = this.state;
       return (
         <div ref={el => (this._el = el)} className="rb-loading">
-          <img src="/img/load.gif" alt="" style={{ width, height }} />
+          <img src="//cdn.yuandingyun.vip/load.gif" alt="" style={{ width, height }} />
         </div>
       );
     } else {
